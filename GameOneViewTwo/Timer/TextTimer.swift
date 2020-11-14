@@ -19,7 +19,7 @@ struct TextTimer: View {
     
     var timer : Timer {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true){_ in
-            if  timeOnOff.start == timeOnOff.end {
+            if  timeOnOff.start  == timeOnOff.end {
                 timeOnOff.pauseTimer()
             }
             if !isPause {
@@ -37,7 +37,7 @@ struct TextTimer: View {
     var body: some View {
         VStack {
             Text(timeFormatting(seconds: currentTime))
-                .font(.custom("Avenir Next", size: 50))
+                .font(.custom("Avenir Next", size: 40))
                 .foregroundColor(Color.gray)
             Spacer()
                 }

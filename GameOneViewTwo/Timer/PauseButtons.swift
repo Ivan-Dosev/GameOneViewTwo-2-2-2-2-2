@@ -18,8 +18,16 @@ struct PauseButtons: View {
     @State private  var isPressedButton60: Bool = false
     @State private  var isPressedButton90: Bool = false
 //    @ObservedObject var timeOnOff = TimeOnOff()
-    @State          var whidth  = UIScreen.main.bounds.width
+    var width : CGFloat {
+        let a = UIScreen.main.bounds.width
+        if a < 700 {
+            return a
+        }else{
+            return 400
+        }
+    }
     @Binding var isOn : Bool
+    @State var colorShadow : Color = Color(red: 163 / 255, green: 177 / 255, blue: 198 / 255)
     
 
       
@@ -29,18 +37,29 @@ struct PauseButtons: View {
                     Button(action: {
                         if self.isOn {
                             self.isPressedButton5.toggle()
-                            timeOnOff.pauseValue = 10
+                            timeOnOff.pauseValue = 60
                         }
                         self.isOn = false
 
 
                     }) {
-                        Text("      5 min      ")
+                        Text(" 5\nmin")
+                            .padding()
+                            .frame(width: width / 5, height: width / 5, alignment: .center)
+                            .background(
+                                ZStack {
+                                    Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                                    Circle()
+                                        .foregroundColor(.white)
+                                        .blur(radius: 4.0)
+                                        .offset(x: -8.0, y: -8.0) })
                     }
-                    .buttonStyle(NeumorphicButtonStyle2(bgColor: Color.init(hex: "F0F0F3"), isPressed: isPressedButton5))
-                    .scaleEffect(self.isPressedButton5 ? 0.95: 1)
+                    .foregroundColor(.gray)
+                    .clipShape(Circle())
+                    .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+                    .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
                     .foregroundColor(self.isPressedButton5 ? .gray : .primary)
-                    .offset(x: -110, y: (self.whidth / 11)+80)
+                    .offset(x: -110, y: (self.width / 11) + 220)
                     .disabled(self.isPressedButton10 || self.isPressedButton15 || self.isPressedButton30 || self.isPressedButton60 || self.isPressedButton90 )
                     
                     Button(action: {
@@ -52,12 +71,23 @@ struct PauseButtons: View {
 
                         
                     }) {
-                        Text("      10 min      ")
+                        Text(" 10\nmin ")
+                            .padding()
+                            .frame(width: width / 5, height: width / 5, alignment: .center)
+                            .background(
+                                ZStack {
+                                    Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                                    Circle()
+                                        .foregroundColor(.white)
+                                        .blur(radius: 4.0)
+                                        .offset(x: -8.0, y: -8.0) })
                     }
-                    .buttonStyle(NeumorphicButtonStyle2(bgColor: Color.init(hex: "F0F0F3"), isPressed: isPressedButton10))
-                    .scaleEffect(self.isPressedButton10 ? 0.95: 1)
+                    .foregroundColor(.gray)
+                    .clipShape(Circle())
+                    .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+                    .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
                     .foregroundColor(self.isPressedButton10 ? .gray : .primary)
-                    .offset(x: 0, y: (self.whidth / 11)+80)
+                    .offset(x: 0, y: (self.width / 11)+220)
                     .disabled(self.isPressedButton5 || self.isPressedButton15 || self.isPressedButton30 || self.isPressedButton60 || self.isPressedButton90 )
                     
                     Button(action: {
@@ -69,12 +99,23 @@ struct PauseButtons: View {
 
                         
                     }) {
-                        Text("      15 min      ")
+                        Text(" 15\nmin ")
+                            .padding()
+                            .frame(width: width / 5, height: width / 5, alignment: .center)
+                            .background(
+                                ZStack {
+                                    Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                                    Circle()
+                                        .foregroundColor(.white)
+                                        .blur(radius: 4.0)
+                                        .offset(x: -8.0, y: -8.0) })
                     }
-                    .buttonStyle(NeumorphicButtonStyle2(bgColor: Color.init(hex: "F0F0F3"), isPressed: isPressedButton15))
-                    .scaleEffect(self.isPressedButton15 ? 0.95: 1)
+                    .foregroundColor(.gray)
+                    .clipShape(Circle())
+                    .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+                    .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
                     .foregroundColor(self.isPressedButton15 ? .gray : .primary)
-                    .offset(x: 110, y: (self.whidth / 11)+80)
+                    .offset(x: 110, y: (self.width / 11) + 220 )
                     .disabled(self.isPressedButton10 || self.isPressedButton5 || self.isPressedButton30 || self.isPressedButton60 || self.isPressedButton90 )
                     
                     Button(action: {
@@ -86,12 +127,23 @@ struct PauseButtons: View {
 
                         
                     }) {
-                        Text("      30 min      ")
+                        Text(" 30\nmin ")
+                            .padding()
+                            .frame(width: width / 5, height: width / 5, alignment: .center)
+                            .background(
+                                ZStack {
+                                    Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                                    Circle()
+                                        .foregroundColor(.white)
+                                        .blur(radius: 4.0)
+                                        .offset(x: -8.0, y: -8.0) })
                     }
-                    .buttonStyle(NeumorphicButtonStyle2(bgColor: Color.init(hex: "F0F0F3"), isPressed: isPressedButton30))
-                    .scaleEffect(self.isPressedButton30 ? 0.95: 1)
+                    .foregroundColor(.gray)
+                    .clipShape(Circle())
+                    .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+                    .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
                     .foregroundColor(self.isPressedButton30 ? .gray : .primary)
-                    .offset(x: -110, y: (self.whidth / 11)+160)
+                    .offset(x: -110, y: (self.width / 11)+130)
                     .disabled(self.isPressedButton10 || self.isPressedButton15 || self.isPressedButton5 || self.isPressedButton60 || self.isPressedButton90 )
                     
                     
@@ -104,12 +156,23 @@ struct PauseButtons: View {
 
                         
                     }) {
-                        Text("      60 min      ")
+                        Text(" 60\nmin ")
+                            .padding()
+                            .frame(width: width / 5, height: width / 5, alignment: .center)
+                            .background(
+                                ZStack {
+                                    Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                                    Circle()
+                                        .foregroundColor(.white)
+                                        .blur(radius: 4.0)
+                                        .offset(x: -8.0, y: -8.0) })
                     }
-                    .buttonStyle(NeumorphicButtonStyle2(bgColor: Color.init(hex: "F0F0F3"), isPressed: isPressedButton60))
-                    .scaleEffect(self.isPressedButton60 ? 0.95: 1)
+                    .foregroundColor(.gray)
+                    .clipShape(Circle())
+                    .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+                    .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
                     .foregroundColor(self.isPressedButton60 ? .gray : .primary)
-                    .offset(x: 0, y: (self.whidth / 11)+160)
+                    .offset(x: 0, y: (self.width / 11)+130)
                     .disabled(self.isPressedButton10 || self.isPressedButton15 || self.isPressedButton30 || self.isPressedButton5 || self.isPressedButton90 )
                     
                     
@@ -122,12 +185,23 @@ struct PauseButtons: View {
 
                         
                     }) {
-                        Text("      90 min      ")
+                        Text(" 90\nmin ")
+                            .padding()
+                            .frame(width: width / 5, height: width / 5, alignment: .center)
+                            .background(
+                                ZStack {
+                                    Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                                    Circle()
+                                        .foregroundColor(.white)
+                                        .blur(radius: 4.0)
+                                        .offset(x: -8.0, y: -8.0) })
                     }
-                    .buttonStyle(NeumorphicButtonStyle2(bgColor: Color.init(hex: "F0F0F3"), isPressed: isPressedButton90))
-                    .scaleEffect(self.isPressedButton90 ? 0.95: 1)
+                    .foregroundColor(.gray)
+                    .clipShape(Circle())
+                    .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+                    .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
                     .foregroundColor(self.isPressedButton90 ? .gray : .primary)
-                    .offset(x: 110, y: (self.whidth / 11)+160)
+                    .offset(x: 110, y: (self.width / 11)+130)
                     .disabled(self.isPressedButton10 || self.isPressedButton15 || self.isPressedButton30 || self.isPressedButton60 || self.isPressedButton5 )
                 }
             }

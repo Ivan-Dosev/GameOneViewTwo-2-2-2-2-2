@@ -11,7 +11,7 @@ import CoreData
 
 struct SaveView: View {
     
-    
+    @State var colorShadow : Color = Color(red: 163 / 255, green: 177 / 255, blue: 198 / 255)
     let toDay = Date()
     var dateFormatter: DateFormatter {
         let format = DateFormatter()
@@ -27,8 +27,24 @@ struct SaveView: View {
     
     @Environment(\.managedObjectContext) var moC
     
-    @State var width = UIScreen.main.bounds.width
-    @State var height = UIScreen.main.bounds.height
+    var width : CGFloat {
+        let a = UIScreen.main.bounds.width
+        if a < 700 {
+            return a
+        }else{
+            return 700
+        }
+    }
+    
+    var height : CGFloat {
+        let b = UIScreen.main.bounds.width
+        if b < 700 {
+            return UIScreen.main.bounds.height
+        }else{
+            return 1000
+        }
+        
+    }
     
     @State var msgField      :String = "Notes"
     @State var titleField    :String = ""
@@ -39,13 +55,7 @@ struct SaveView: View {
         ZStack {
             Color.black.opacity(0.05)
                 .edgesIgnoringSafeArea(.all)
-            Circle()
-                .fill(Color.white)
-                .frame(width: self.width * 3, height: self.width  * 3 , alignment: .center)
-                .padding(.horizontal, -100)
-                .offset(y:  self.width > 700 ? -(self.width * 2.0) :  -(self.width * 2.3))
-                .shadow(radius: 5)
-                .blendMode(.darken)
+
             
             VStack {
               HStack {
@@ -58,18 +68,26 @@ struct SaveView: View {
                 }) {
                    
                     Text("Save")
-                        .fontWeight(.bold)
-                        .frame(width: 50, height: 50, alignment: .center)
                         .padding()
-                        
-                        .foregroundColor(Color.black)
-                        .background(Color.white.cornerRadius(10).shadow(radius: 5))
-                        .blendMode(.darken)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(lineWidth: 2).foregroundColor(Color.white) )
-                        .foregroundColor(Color.white)
-                        .shadow(color: Color.gray, radius: 2)
+                        .frame(width: width / 4.5 , height: width / 4.5, alignment: .center)
+                        .background(
+                            ZStack {
+                                Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                                Circle()
+//                                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                    .foregroundColor(.white)
+                                    .blur(radius: 4.0)
+                                    .offset(x: -8.0, y: -8.0) })
+
+
                 }
+                .foregroundColor(.gray)
+
+                .clipShape( Circle())
+                .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+                .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
+                .foregroundColor(self.isShow ? .gray : .primary)
+              
 
 
                   Spacer()
@@ -77,28 +95,54 @@ struct SaveView: View {
               }
               .padding()
               .frame(width: self.width, alignment: .center)
-                  VStack {
+                
+                
+            VStack {
                     HStack{
                         
                         TextField("title ...", text: self.$titleField)
                         .padding()
+                            .background(
+                                ZStack {
+                                    Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                        .foregroundColor(.white)
+                                        .blur(radius: 4.0)
+                                        .offset(x: -8.0, y: -8.0)
+                                       
+                                }
+                            )
                          
                     }
                     .frame( height: 50, alignment: .center)
-                    .foregroundColor(Color.black)
-                    .background(Color.white.cornerRadius(10).shadow(radius: 5))
-                    .blendMode(.darken)
-                    
+                    .foregroundColor(.gray)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+                    .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
+//                    .foregroundColor(Color.black)
+//                    .background(Color.white.cornerRadius(10).shadow(radius: 5))
+//                    .blendMode(.darken)
+          
                    MultiLine(txt: self.$msgField)
                     .padding()
-                    
-                    Spacer()
+                    .frame(width: self.width / 1.1 , height: ( self.height / 1.3 )  - 60)
+                    .background(
+                        ZStack {
+                            Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                .foregroundColor(.white)
+                                .blur(radius: 4.0)
+                                .offset(x: -8.0, y: -8.0)
+                               
+                        }
+                    )
+                    .foregroundColor(.gray)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+                    .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
                   }
-                .frame(width: self.width / 1.1 , height: self.height / 1.3)
-                .foregroundColor(Color.black)
-                .background(Color.white.cornerRadius(10).shadow(radius: 5))
-                .blendMode(.darken)
             }
+            .frame(width: self.width / 1.1 , height: self.height / 1.3)
         }
     }
     func saveTitleOn() {

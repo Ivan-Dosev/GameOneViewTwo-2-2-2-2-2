@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Alo" representedClassName="Alo" syncable="YES">
         <attribute name="day" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -9,7 +9,28 @@
         <attribute name="time" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="GameLock" representedClassName="GameLock" syncable="YES">
+        <attribute name="idG" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageG" optional="YES" attributeType="String"/>
+        <attribute name="isLockG" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isOnOffG" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="reklamaG" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="textG" optional="YES" attributeType="String"/>
+        <attribute name="timeDateG" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="totallG" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Lock" representedClassName="Lock" syncable="YES">
+        <attribute name="idH" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isLockH" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isOnOffH" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="nameOneH" optional="YES" attributeType="String"/>
+        <attribute name="nameTreeH" optional="YES" attributeType="String"/>
+        <attribute name="nameTwoH" optional="YES" attributeType="String"/>
+        <attribute name="textH" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Alo" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="GameLock" positionX="-54" positionY="72" width="128" height="163"/>
+        <element name="Lock" positionX="-63" positionY="36" width="128" height="148"/>
     </elements>
 </model>

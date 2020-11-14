@@ -18,10 +18,11 @@ class TimeOnOff: ObservableObject{
    @Published var isNotification : Bool
    @Published var onApp          : Int
    @Published var offApp         : Int
+    @Published var bonus  : Int
   
     
     init(end : Int = 90 , start : Int = 0 , pauseValue : Int = 0 , noti : Int = 0, isNoti : Bool = false , onApp : Int
-            = 0, offApp : Int = 0) {
+            = 0, offApp : Int = 0 , bonus : Int = 0) {
         self.end            = end
         self.start          = start
         self.pauseValue     = pauseValue
@@ -29,9 +30,10 @@ class TimeOnOff: ObservableObject{
         self.isNotification = isNoti
         self.onApp          = onApp
         self.offApp         = offApp
+        self.bonus          = bonus
       
-             resumeTimer()
- 
+//             resumeTimer()
+               pauseTimer()
     }
 
     
@@ -54,10 +56,12 @@ class TimeOnOff: ObservableObject{
                 self.pauseValue -= 1
             }
               
-//            print("valueTimes - \(self.start) ,\(self.end) \(self.pauseValue)")
+            print("valueTimes - \(self.start) ,\(self.end) \(self.pauseValue)")
             
         }else{
             self.start = 0
+            self.bonus += 10
+            print("ccc ---\(self.bonus)")
            // dobawjat se tochki
                
         }

@@ -8,11 +8,16 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct PickerTime: View {
-    
-    var width = UIScreen.main.bounds.width
+    @State var colorShadow : Color = Color(red: 163 / 255, green: 177 / 255, blue: 198 / 255)
+    var width : CGFloat {
+        let a = UIScreen.main.bounds.width
+        if a < 700 {
+            return a
+        }else{
+            return 700
+        }
+    }
     
     private let data: [[String]] = [
         Array(0...24).map { "\($0)" + " h"},
@@ -35,26 +40,50 @@ struct PickerTime: View {
                         .offset(x: 90)
                 }
                 .frame(width: width / 1.2, height: 50)
-                .background(Color.init(hex: "F0F0F3"))
-                .cornerRadius(10)
+                .background(
+                    ZStack {
+                        Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                            .foregroundColor(.white)
+                            .blur(radius: 4.0)
+                            .offset(x: -8.0, y: -8.0)
+                           
+                    }
+                )
             }
-            .shadow(color: Color.white, radius: 5, x: -5, y: -5)
-            .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 5, y: 5)
+            .foregroundColor(.gray)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+            .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
+        
+
 
             ZStack{
                 VStack {
                     PickerView(data: self.data, selections: self.$selections)
+                     
                         .frame(width: width / 1.2)
+                        .background(
+                            ZStack {
+                                Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                   .frame( height: 110)
+                                   .foregroundColor(.white)
+                                    .blur(radius: 4.0)
+                                    .offset(x: -8.0, y: -8.0)
+                                   
+                            }
+                        )
                 }
-                .frame(width: width / 1.2, height: 200)
-                .background(Color.init(hex: "F0F0F3"))
-                .cornerRadius(10)
+                .frame( height: 110)
+                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
+                .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
+               
             }
-            .shadow(color: Color.white, radius: 5, x: -5, y: -5)
-            .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 5, y: 5)
         }
     }
-    }
+}
     func getSeconds() -> Int{
         let hours   =  selections[0] * 60 * 60
         let minutes =  selections[1] * 60
@@ -78,6 +107,7 @@ struct PickerView: UIViewRepresentable {
         
         picker.dataSource = context.coordinator
         picker.delegate = context.coordinator
+     
         
         return picker
     }

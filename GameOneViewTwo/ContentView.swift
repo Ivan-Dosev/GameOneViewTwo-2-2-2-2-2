@@ -12,17 +12,22 @@ import UserNotifications
 struct ContentView: View {
     
     @EnvironmentObject var timeOnOff : TimeOnOff
-   
+    @State var ppValue : Int = 0
+    @State var ttValue : Int = 0
+    @State var doubleTime : Double = 0
+    
   
     var body: some View {
-//                           CoreDataView()
-//                           ContView()
-//                             FirstView()
+
         FirstNewView()
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification), perform: { _ in
                 print("Moving to the background")
                 // Вика нотификацията като излезеш от приложението след 5 секунди
-                createNotification()
+                if timeOnOff.pauseValue != 0 {
+                    createNotification()
+                }
+              
+                
                 let toDay = Date()
                 self.timeOnOff.isNotification = true
                 let diffComponents = Calendar.current.dateComponents([.second, .minute], from: toDay)
@@ -43,9 +48,18 @@ struct ContentView: View {
                 
                 timeOnOff.onApp = Int(sec!) + (Int(min!) * 60)
                 
-                print("\(timeOnOff.onApp - timeOnOff.offApp)")
+                print("\(timeOnOff.onApp - timeOnOff.offApp)!!!")
                 
-                if timeOnOff.onApp - timeOnOff.offApp > 10 {
+                self.ttValue  = timeOnOff.onApp - timeOnOff.offApp
+                self.ppValue  = timeOnOff.pauseValue
+                print("\(ppValue)...\(ttValue)...")
+//                if ppValue > ttValue {
+//                                     timeOnOff.pauseValue = ppValue - ttValue
+//                }else{
+//                                     timeOnOff.pauseValue = 10
+//                }
+                
+                if timeOnOff.onApp - timeOnOff.offApp > 30 + timeOnOff.pauseValue {
                     timeOnOff.start = 0
                     timeOnOff.pauseTimer()
                     print("Out from App")
@@ -55,6 +69,7 @@ struct ContentView: View {
             .onAppear() {
                 // Иска разрешение да изпраща нотификации като зареди ContentView
                 notificationPermission()
+            
                 //
             }
 //        ProbaView()
@@ -63,6 +78,7 @@ struct ContentView: View {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
                 print("All set!")
+               
             } else if let error = error {
                 print(error.localizedDescription)
             }
@@ -71,11 +87,23 @@ struct ContentView: View {
     func createNotification () {
         let content = UNMutableNotificationContent()
         content.title = "Go back to the app"
-        content.subtitle = "You will lose your points in 10 sec"
+        content.subtitle = "You will lose your points in 30 sec"
         content.sound = UNNotificationSound.default
-
+        doubleTime = Double(timeOnOff.pauseValue) - 30
+        if doubleTime <= 0 {
+            doubleTime = 10
+        }
+//        if timeOnOff.pauseValue == 10 {
+//                     doubleTime = 10
+//        }else{
+//                     doubleTime = Double(timeOnOff.pauseValue) - 20
+//            if doubleTime <= 0 {
+//                     doubleTime = 1
+//            }
+//
+//        }
         // show this notification five seconds from now
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: doubleTime  , repeats: false)
 
         // choose a random identifier
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
