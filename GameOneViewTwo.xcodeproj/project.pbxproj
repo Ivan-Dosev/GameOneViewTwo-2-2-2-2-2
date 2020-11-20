@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,6 +63,10 @@
 		CC9BCDC1252431E6007FC885 /* ProbaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9BCDC0252431E6007FC885 /* ProbaView.swift */; };
 		CCAFF08925499227003B0114 /* FlowContentViewNumber2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAFF08825499227003B0114 /* FlowContentViewNumber2.swift */; };
 		CCAFF08E254992E0003B0114 /* FlowContentViewNumber3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAFF08D254992E0003B0114 /* FlowContentViewNumber3.swift */; };
+		CCBA0C0F2564A33B002D31E0 /* ShowPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA0C0E2564A33B002D31E0 /* ShowPurchases.swift */; };
+		CCBA0C262567790D002D31E0 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = CCBA0C252567790D002D31E0 /* Purchases */; };
+		CCBA0C9A2567BA17002D31E0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA0C992567BA17002D31E0 /* DetailView.swift */; };
+		CCBA0C9F2567BA24002D31E0 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA0C9E2567BA24002D31E0 /* SubscriptionManager.swift */; };
 		CCCF774A252583B6007430E3 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF7749252583B6007430E3 /* ButtonView.swift */; };
 		CCCF774F2525848B007430E3 /* FirstNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF774E2525848B007430E3 /* FirstNewView.swift */; };
 		CCCF779E2529890F007430E3 /* CDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF779D2529890F007430E3 /* CDView.swift */; };
@@ -148,6 +152,9 @@
 		CC9BCDC0252431E6007FC885 /* ProbaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbaView.swift; sourceTree = "<group>"; };
 		CCAFF08825499227003B0114 /* FlowContentViewNumber2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowContentViewNumber2.swift; sourceTree = "<group>"; };
 		CCAFF08D254992E0003B0114 /* FlowContentViewNumber3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowContentViewNumber3.swift; sourceTree = "<group>"; };
+		CCBA0C0E2564A33B002D31E0 /* ShowPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPurchases.swift; sourceTree = "<group>"; };
+		CCBA0C992567BA17002D31E0 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = ../../../TestPurchases/TestPurchases/DetailView.swift; sourceTree = "<group>"; };
+		CCBA0C9E2567BA24002D31E0 /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionManager.swift; path = ../../../TestPurchases/TestPurchases/SubscriptionManager.swift; sourceTree = "<group>"; };
 		CCCF7749252583B6007430E3 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		CCCF774E2525848B007430E3 /* FirstNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNewView.swift; sourceTree = "<group>"; };
 		CCCF779D2529890F007430E3 /* CDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDView.swift; sourceTree = "<group>"; };
@@ -161,6 +168,7 @@
 				CC054DD6255CF50A00BC3718 /* GoogleMobileAds.framework in Frameworks */,
 				CC054DD8255CF51800BC3718 /* UserMessagingPlatform.framework in Frameworks */,
 				CC054DD1255CF4FD00BC3718 /* GoogleAppMeasurement.framework in Frameworks */,
+				CCBA0C262567790D002D31E0 /* Purchases in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +236,7 @@
 				CC45848E2552AD350003989F /* GameLock+CoreDataProperties.swift */,
 				CC9BCD3B2523A4F5007FC885 /* Alo+CoreDataClass.swift */,
 				CC9BCD3C2523A4F5007FC885 /* Alo+CoreDataProperties.swift */,
+				CCBA0C0D2564A305002D31E0 /* Purchases */,
 				CC054DCF255CF4CB00BC3718 /* FrameWorks */,
 				CCAFEFDC254924C8003B0114 /* FlowSettings */,
 				CC9BCD072523A336007FC885 /* GameOneViewTwo */,
@@ -372,6 +381,16 @@
 			path = TimeLineViewNumber3;
 			sourceTree = "<group>";
 		};
+		CCBA0C0D2564A305002D31E0 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				CCBA0C9E2567BA24002D31E0 /* SubscriptionManager.swift */,
+				CCBA0C992567BA17002D31E0 /* DetailView.swift */,
+				CCBA0C0E2564A33B002D31E0 /* ShowPurchases.swift */,
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,6 +407,9 @@
 			dependencies = (
 			);
 			name = GameOneViewTwo;
+			packageProductDependencies = (
+				CCBA0C252567790D002D31E0 /* Purchases */,
+			);
 			productName = GameOneViewTwo;
 			productReference = CC9BCD052523A336007FC885 /* GameOneViewTwo.app */;
 			productType = "com.apple.product-type.application";
@@ -459,6 +481,9 @@
 				Base,
 			);
 			mainGroup = CC9BCCFC2523A336007FC885;
+			packageReferences = (
+				CCBA0C242567790D002D31E0 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
 			productRefGroup = CC9BCD062523A336007FC885 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -504,6 +529,7 @@
 				CC45823D254B47B40003989F /* CATransaction+Extension.swift in Sources */,
 				CC4583E7254EA9080003989F /* Kalvach_View.swift in Sources */,
 				CC4583CE254EA3730003989F /* Tree_View.swift in Sources */,
+				CCBA0C0F2564A33B002D31E0 /* ShowPurchases.swift in Sources */,
 				CC458242254B47C00003989F /* CGPath+SVG.swift in Sources */,
 				CC458251254B47E50003989F /* ShapeView.swift in Sources */,
 				CC9BCD572523A79D007FC885 /* ContView.swift in Sources */,
@@ -516,8 +542,10 @@
 				CCAFF08E254992E0003B0114 /* FlowContentViewNumber3.swift in Sources */,
 				CCCF774F2525848B007430E3 /* FirstNewView.swift in Sources */,
 				CC45826A254B48260003989F /* UIView+Extension.swift in Sources */,
+				CCBA0C9A2567BA17002D31E0 /* DetailView.swift in Sources */,
 				CC45825B254B47FE0003989F /* TextView.swift in Sources */,
 				CC45822E254B478D0003989F /* Animation.swift in Sources */,
+				CCBA0C9F2567BA24002D31E0 /* SubscriptionManager.swift in Sources */,
 				CCCF774A252583B6007430E3 /* ButtonView.swift in Sources */,
 				CC9BCD3E2523A4F5007FC885 /* Alo+CoreDataProperties.swift in Sources */,
 				CC458260254B480B0003989F /* Timeline.swift in Sources */,
@@ -723,7 +751,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.IVANDOSEV.GameOneViewTwo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.IVANDOSEV.TestPurchases;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -749,7 +777,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.IVANDOSEV.GameOneViewTwo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.IVANDOSEV.TestPurchases;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -880,6 +908,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CCBA0C242567790D002D31E0 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CCBA0C252567790D002D31E0 /* Purchases */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCBA0C242567790D002D31E0 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = Purchases;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CC9BCD132523A338007FC885 /* GameOneViewTwo.xcdatamodeld */ = {

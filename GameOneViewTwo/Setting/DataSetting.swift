@@ -17,6 +17,7 @@ struct DataSetting: View {
     @State var isExit      : Bool = false
     @ObservedObject var  chose              = SetBranchNew()
     @State          var showingAlert : Bool = false
+    @State          var showingSheet : Bool = false
     
     var width : CGFloat { let a = UIScreen.main.bounds.width
         if a < 700 { return a }else{ return 700 }}
@@ -186,8 +187,13 @@ struct DataSetting: View {
             }
         }
         .alert(isPresented: $showingAlert, content: {
-            Alert(title: Text("Title"), message: Text("Message"), dismissButton: .default(Text("OK")))
+
+            Alert(title: Text("Title"), message: Text("Message"), primaryButton: Alert.Button.default(Text("ok"), action: { self.showingSheet = true  }), secondaryButton: Alert.Button.cancel() )
+                
+                
+            
         })
+        .sheet(isPresented: $showingSheet, content: { ShowPurchases() })
     }
     
     
