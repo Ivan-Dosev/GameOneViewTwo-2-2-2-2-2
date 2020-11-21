@@ -10,6 +10,8 @@ import SwiftUI
 
 struct FirstNewView: View {
     
+
+    
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: GameLock.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \GameLock.idG, ascending: true)]) var gameLock: FetchedResults<GameLock>
     @ObservedObject var  chose = SetBranchNew()
@@ -172,9 +174,15 @@ struct FirstNewView: View {
             return    AnyView(FlowContentViewNumber2())
         case 2:
             return    AnyView(FlowContentViewNumber3())
+        case 3:
+            return    AnyView(Text("🐶"))
+        case 4:
+            return    AnyView(Text("🐱"))
+        case 5:
+            return    AnyView(Text("🐭"))
 
         default:
-            return    AnyView(FlowContentViewNumber3())
+            return    AnyView(Text("🐝"))
         }
         
        

@@ -9,6 +9,10 @@ import SwiftUI
 
 struct DataSetting: View {
     
+    
+    @ObservedObject var subscriptionManager: SubscriptionManager = .shared
+    var isActive : Bool { subscriptionManager.paymentCompleted }
+    
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: GameLock.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \GameLock.idG, ascending: true)]) var gameLock: FetchedResults<GameLock>
     
@@ -61,6 +65,8 @@ struct DataSetting: View {
                     Spacer()
                 }
                 .offset(x:self.width < 700 ? 15 : 15 , y: self.width < 700 ? 10 : 10)
+
+//                Text(isActive ? "true" : "false")
                 Spacer()
                 VStack{
                     ScrollView(.vertical, showsIndicators: false){
@@ -141,7 +147,7 @@ struct DataSetting: View {
                                         
                                     }) {
                                         
-                                        Text(br.isLockG ? "🔓" : "🔐")
+                                        Text(( br.isLockG || isActive ) ? "🔓" : "🔐")
                                             .frame(width: 50 , height: 50 , alignment: .center)
                                             .background(
                                                 ZStack {
@@ -186,6 +192,9 @@ struct DataSetting: View {
                 .foregroundColor(.gray)
             }
         }
+        .onAppear(){
+            subscriptionManager.checkSubscribtionStatus()
+        }
         .alert(isPresented: $showingAlert, content: {
 
             Alert(title: Text("Title"), message: Text("Message"), primaryButton: Alert.Button.default(Text("ok"), action: { self.showingSheet = true  }), secondaryButton: Alert.Button.cancel() )
@@ -200,7 +209,7 @@ struct DataSetting: View {
     func checkButon(index: Int) -> Bool{
         var alo : Bool = false
       
-        if gameLock[index].isLockG {
+        if gameLock[index].isLockG || isActive {
             
             for num in 0..<gameLock.count {
 
