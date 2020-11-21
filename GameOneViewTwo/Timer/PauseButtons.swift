@@ -8,7 +8,11 @@
 
 import SwiftUI
 
+
 struct PauseButtons: View {
+    
+
+    
     @EnvironmentObject var timeOnOff : TimeOnOff
     var bgColor: Color
     @State private  var isPressedButton5 : Bool = false
@@ -204,6 +208,6 @@ struct PauseButtons: View {
                     .offset(x: 110, y: (self.width / 11)+130)
                     .disabled(self.isPressedButton10 || self.isPressedButton15 || self.isPressedButton30 || self.isPressedButton60 || self.isPressedButton5 )
                 }
-            }
         }
     }
+}

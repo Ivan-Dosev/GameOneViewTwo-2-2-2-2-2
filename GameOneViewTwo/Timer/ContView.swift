@@ -50,9 +50,12 @@ struct ContView: View {
     @State          var pauseValue       : Int = 0
     @State          var isPause          : Bool = false
     @State          var isOn             : Bool = true
+    @State          var isReward         : Bool = false
+    
     var timer : Timer {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true)  { _ in
             self.dossi  = timeOnOff.pauseValue
+
         }
     }
 
@@ -70,7 +73,7 @@ struct ContView: View {
       return  ZStack{
             Color.init(hex: "F0F0F3")
                 .edgesIgnoringSafeArea(.all)
-           
+
 
                 VStack{
                     if self.isShow {
@@ -170,6 +173,7 @@ struct ContView: View {
                                 timeOnOff.pauseTimer()
 
                                 print("I-\(timeOnOff.start)...\(timeOnOff.end)")
+
                                 if timeOnOff.start == timeOnOff.end {
 //                                    timeOnOff.bonus += 10
                                     saveToCoreData()
@@ -202,9 +206,13 @@ struct ContView: View {
                     .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
                     .foregroundColor(self.isShow ? .gray : .primary)
                   
-                }.frame(height: 120)
+                }
+                .frame(height: 120)
                 .offset(y: -20)
-      }.onAppear(){
+
+      }
+
+      .onAppear(){
                     rewardAd.LoadRewarded()
                     timer
                     timeOnOff.start = 0

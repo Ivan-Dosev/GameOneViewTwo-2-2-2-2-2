@@ -49,3 +49,22 @@ struct PrimaryButton: ViewModifier {
             
     }
 }
+
+struct CircleButton: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(
+                ZStack {
+                    Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
+                    Circle()
+                        .foregroundColor(.white)
+                        .blur(radius: 4.0)
+                        .offset(x: -8.0, y: -8.0) })
+            .foregroundColor(.gray)
+            .clipShape( Circle())
+            .shadow(color: Color(red: 163 / 255, green: 177 / 255, blue: 198 / 255), radius: 20, x: 20.0  , y:  20.0)
+            .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
+            
+    }
+}
+

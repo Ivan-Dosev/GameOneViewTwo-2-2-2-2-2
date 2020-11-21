@@ -78,18 +78,7 @@ struct DetailView: View {
                        .offset(y: -110)
                 }
                 .frame(width: 300.0, height: isActive ? 300 : 0, alignment: .center)
-                .background(
-                       ZStack {
-                           Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
-                           RoundedRectangle(cornerRadius: 10, style: .continuous)
-                               .foregroundColor(.white)
-                               .blur(radius: 4.0)
-                               .offset(x: -8.0, y: -8.0) })
-
-                    .foregroundColor(.gray)
-                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                    .shadow(color: colorShadow, radius: 5, x: 5.0  , y:  5.0)
-                    .shadow(color: Color.white, radius: 5, x: -5.0 , y: -5.0)
+                .modifier(PrimaryButton())
                     .offset(y: 50)
 
                 
@@ -113,18 +102,7 @@ struct DetailView: View {
                                 .font(.title)
                         }
                         .frame(width: 300  , height: isActive ? 0 : 80 , alignment: .center)
-                        .background(
-                           ZStack {
-                               Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
-                               RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                   .foregroundColor(.white)
-                                   .blur(radius: 4.0)
-                                   .offset(x: -8.0, y: -8.0) })
-
-                        .foregroundColor(.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .shadow(color: colorShadow, radius: 5, x: 5.0  , y:  5.0)
-                        .shadow(color: Color.white, radius: 5, x: -5.0 , y: -5.0)
+                        .modifier(PrimaryButton())
                         .offset(y: -40)
                     }
                     Button(action: {
@@ -139,18 +117,7 @@ struct DetailView: View {
                                 .font(.title)
                         }
                         .frame(width: 300  , height: isActive ? 0 : 80 , alignment: .center)
-                        .background(
-                           ZStack {
-                               Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
-                               RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                   .foregroundColor(.white)
-                                   .blur(radius: 4.0)
-                                   .offset(x: -8.0, y: -8.0) })
-
-                        .foregroundColor(.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .shadow(color: colorShadow, radius: 5, x: 5.0  , y:  5.0)
-                        .shadow(color: Color.white, radius: 5, x: -5.0 , y: -5.0)
+                        .modifier(PrimaryButton())
                         .offset(y: -20)
                       
                     }

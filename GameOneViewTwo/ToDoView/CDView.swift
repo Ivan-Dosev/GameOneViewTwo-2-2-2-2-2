@@ -68,26 +68,11 @@ struct CDView: View {
                             Text("⏎")
                                 .padding()
                                 .frame(width: width / 5 , height: width / 5, alignment: .center)
-                                .background(
-                                    ZStack {
-                                        Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
-                //                        Circle()
-                                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                            .foregroundColor(.white)
-                                            .blur(radius: 4.0)
-                                            .offset(x: -8.0, y: -8.0) })
+ 
                         }
-                        .foregroundColor(.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                        .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
-                        .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
+                        .modifier(PrimaryButton())
                         .foregroundColor(self.isExit ? .gray : .primary)
-
-
-                           .offset(y: self.width < 700 ? 10 : 10)
-                     
-
-
+                        .offset(y: self.width < 700 ? 10 : 10)
                      Spacer()
                         
                         Button(action: {
@@ -96,48 +81,17 @@ struct CDView: View {
                             Text("✚")
                                 .padding()
                                 .frame(width: width / 4.5 , height: width / 4.5, alignment: .center)
-                                .background(
-                                    ZStack {
-                                        Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
-                                        Circle()
-//                                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                            .foregroundColor(.white)
-                                            .blur(radius: 4.0)
-                                            .offset(x: -8.0, y: -8.0) })
                         }
-                        .foregroundColor(.gray)
-
-                        .clipShape( Circle())
-                        .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
-                        .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
+                        .modifier(CircleButton())
                         .foregroundColor(self.isSave ? .gray : .primary)
-
                         .offset(x: 10, y: self.width < 700 ? 40 : 40)
 
-
-
-
-                    
                         Spacer()
                         EditButton()
                             .padding()
                             .frame(width: width / 5 , height: width / 5, alignment: .center)
-                            .background(
-                                ZStack {
-                                    Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
-            //                        Circle()
-                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                        .foregroundColor(.white)
-                                        .blur(radius: 4.0)
-                                        .offset(x: -8.0, y: -8.0) })
-
-                            .foregroundColor(.gray)
-                            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                            .shadow(color: colorShadow, radius: 20, x: 20.0  , y:  20.0)
-                            .shadow(color: Color.white, radius: 20, x: -20.0 , y: -20.0)
-//                            .foregroundColor(self.isPressed ? .gray : .primary)
-
-                           .offset(x:self.width < 700 ? 15 : 15 , y: self.width < 700 ? 10 : 10)
+                            .modifier(PrimaryButton())
+                            .offset(x:self.width < 700 ? 15 : 15 , y: self.width < 700 ? 10 : 10)
                         
                         
                         Spacer()
@@ -145,8 +99,6 @@ struct CDView: View {
                     .edgesIgnoringSafeArea(.top)
                     .frame(width: width)
 
-                 
-                  
                     Spacer()
                     
                     VStack {
