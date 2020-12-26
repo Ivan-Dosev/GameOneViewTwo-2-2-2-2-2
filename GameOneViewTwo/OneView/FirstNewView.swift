@@ -67,8 +67,25 @@ struct FirstNewView: View {
                 HStack {
                     
                     Spacer()
-                    ButtonView(width: width / 4  , height: width / 6 ,isPressed: self.$isPolivane, name: "Polivane")
-                        .offset(y: self.width < 700 ? 40 : 40)
+                    if self.isPolivane {
+                        Text("Polivane")
+                            .frame(width: width / 4  , height: width / 6)
+                            .modifier(PrimaryButton())
+                            .offset(y: self.width < 700 ? 40 : 40)
+                    }else {
+                        Button(action: {
+                            self.isPolivane = true
+                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                                            self.isPolivane = false
+                                                        }
+                        }) {
+                            Text("Polivane")
+                                .frame(width: width / 4  , height: width / 6)
+                                .modifier(PrimaryButton())
+                                .offset(y: self.width < 700 ? 40 : 40)
+                        }
+                    }
+
 
                  Spacer()
                     VStack(spacing: 20){
@@ -123,15 +140,19 @@ struct FirstNewView: View {
 
                 
             } .frame(width: self.width  , height: self.height )
-            VStack {
-                
+            ZStack {
+             
+
                 loadNewView()
-//                  FlowContentViewNumber1()
-//                  FlowContentViewNumber2()
-//                    FlowContentViewNumber3()
+         
+ 
+
             }
         }
         .onAppear(){
+            
+                isTretirane.toggle()
+       
           
             if gameLock.count == 0 {
 
@@ -161,6 +182,7 @@ struct FirstNewView: View {
         
         var index = 0
         
+        
         for num in 0..<gameLock.count {
             if gameLock[num].isOnOffG {
                 index = num
@@ -169,11 +191,11 @@ struct FirstNewView: View {
         
         switch index {
         case 0:
-            return    AnyView(FlowContentViewNumber1())
+            return    AnyView(ArdaView100(isPolivane: $isPolivane))
         case 1:
-            return    AnyView(FlowContentViewNumber2())
+            return    AnyView(ArdaView(isPolivane: $isPolivane))
         case 2:
-            return    AnyView(FlowContentViewNumber3())
+            return    AnyView(ArdaView200(isPolivane: $isPolivane))
         case 3:
             return    AnyView(Text("🐶"))
         case 4:
@@ -182,7 +204,7 @@ struct FirstNewView: View {
             return    AnyView(Text("🐭"))
 
         default:
-            return    AnyView(Text("🐝"))
+            return    AnyView(Text("🐭"))
         }
         
        

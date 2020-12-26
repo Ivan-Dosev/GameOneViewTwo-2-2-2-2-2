@@ -42,6 +42,7 @@ struct DataSetting: View {
                     Button(action: {
                         self.isExit.toggle()
                         self.pMode.wrappedValue.dismiss()
+//                        UserDefaults.standard.set(number, forKey: "Arda")
                     }) {
                         Text("⏎")
                             .padding()
@@ -89,15 +90,7 @@ struct DataSetting: View {
                                         }
                                     } .frame(width: 140  , height: 50 , alignment: .center)
 
-
-                                            
-
-                               
-
-                                    
                                     Spacer()
-                                    
-                        
 
                                     Text( br.isOnOffG ? "🟢" : "◉")
                                             .frame(width: 50 , height: 50 , alignment: .center)
@@ -154,6 +147,7 @@ struct DataSetting: View {
 
                 if num == index {
                     gameLock[num].isOnOffG = true
+                    UserDefaults.standard.set(num, forKey: "Arda")
                 }else{
                     gameLock[num].isOnOffG = false
                 }
