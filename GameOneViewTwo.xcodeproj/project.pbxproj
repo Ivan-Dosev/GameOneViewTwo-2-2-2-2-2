@@ -23,6 +23,7 @@
 		CC229CC82596573C00CA5BD7 /* Rine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC229CC72596573C00CA5BD7 /* Rine.swift */; };
 		CC229CD12596F36C00CA5BD7 /* ArtboardBk3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC229CCF2596F36C00CA5BD7 /* ArtboardBk3View.swift */; };
 		CC229CD22596F36C00CA5BD7 /* Timeline_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC229CD02596F36C00CA5BD7 /* Timeline_1.swift */; };
+		CC229CD725971D0300CA5BD7 /* DeadNewVerstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC229CD625971D0300CA5BD7 /* DeadNewVerstion.swift */; };
 		CC40676A253BF4E200C57373 /* ProbaSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC406769253BF4E200C57373 /* ProbaSetting.swift */; };
 		CC44E4E8253D36CF00A2A03A /* DataSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC44E4E7253D36CF00A2A03A /* DataSetting.swift */; };
 		CC45821B254B410C0003989F /* FlowContentViewNumber1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC45821A254B410C0003989F /* FlowContentViewNumber1.swift */; };
@@ -118,6 +119,7 @@
 		CC229CC72596573C00CA5BD7 /* Rine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rine.swift; sourceTree = "<group>"; };
 		CC229CCF2596F36C00CA5BD7 /* ArtboardBk3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtboardBk3View.swift; path = "../../../../../../../Image Nature/1700/Ok3/ArtboardBk3View.swift"; sourceTree = "<group>"; };
 		CC229CD02596F36C00CA5BD7 /* Timeline_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline_1.swift; path = "../../../../../../../Image Nature/1700/Ok3/Timeline_1.swift"; sourceTree = "<group>"; };
+		CC229CD625971D0300CA5BD7 /* DeadNewVerstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadNewVerstion.swift; sourceTree = "<group>"; };
 		CC406769253BF4E200C57373 /* ProbaSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbaSetting.swift; sourceTree = "<group>"; };
 		CC44E4E7253D36CF00A2A03A /* DataSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSetting.swift; sourceTree = "<group>"; };
 		CC45821A254B410C0003989F /* FlowContentViewNumber1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowContentViewNumber1.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				CC229C3B25959D8F00CA5BD7 /* MagikScene.sks */,
+				CC229CD625971D0300CA5BD7 /* DeadNewVerstion.swift */,
 				CC229C3C25959D8F00CA5BD7 /* TreeDeadView.swift */,
 				CC229C3D25959D8F00CA5BD7 /* TreeScene.swift */,
 			);
@@ -626,6 +629,7 @@
 				CC45826A254B48260003989F /* UIView+Extension.swift in Sources */,
 				CCCF3BA32568337700908F74 /* DetailView.swift in Sources */,
 				CC229CD22596F36C00CA5BD7 /* Timeline_1.swift in Sources */,
+				CC229CD725971D0300CA5BD7 /* DeadNewVerstion.swift in Sources */,
 				CC45825B254B47FE0003989F /* TextView.swift in Sources */,
 				CC229C4B25959DAB00CA5BD7 /* Tree18View.swift in Sources */,
 				CC45822E254B478D0003989F /* Animation.swift in Sources */,

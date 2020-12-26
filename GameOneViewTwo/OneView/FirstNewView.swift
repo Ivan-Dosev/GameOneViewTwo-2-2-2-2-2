@@ -142,8 +142,13 @@ struct FirstNewView: View {
             } .frame(width: self.width  , height: self.height )
             ZStack {
              
-
-                loadNewView()
+                if self.isTretirane {
+//                    TreeDeadView()
+                      DeadNewViewTree()
+                }else{
+                    loadNewView()
+                }
+              
          
  
 
@@ -191,20 +196,42 @@ struct FirstNewView: View {
         
         switch index {
         case 0:
-            return    AnyView(ArdaView100(isPolivane: $isPolivane))
-        case 1:
             return    AnyView(ArdaView(isPolivane: $isPolivane))
+        case 1:
+            return    AnyView(ArdaView100(isPolivane: $isPolivane))
         case 2:
             return    AnyView(ArdaView200(isPolivane: $isPolivane))
         case 3:
-            return    AnyView(Text("🐶"))
+            return    AnyView(ArdaView300(isPolivane: $isPolivane))
         case 4:
-            return    AnyView(Text("🐱"))
+            return    AnyView(ArdaView400(isPolivane: $isPolivane))
         case 5:
-            return    AnyView(Text("🐭"))
+            return    AnyView(ArdaView500(isPolivane: $isPolivane))
+        case 6:
+            return    AnyView(ArdaView600(isPolivane: $isPolivane))
+        case 7:
+            return    AnyView(ArdaView700(isPolivane: $isPolivane))
+        case 8:
+            return    AnyView(ArdaView800(isPolivane: $isPolivane))
+        case 9:
+            return    AnyView(ArdaView900(isPolivane: $isPolivane))
+        case 10:
+            return    AnyView(ArdaView1000(isPolivane: $isPolivane))
+        case 11:
+            return    AnyView(ArdaView1100(isPolivane: $isPolivane))
+        case 12:
+            return    AnyView(ArdaView1200(isPolivane: $isPolivane))
+        case 13:
+            return    AnyView(ArdaView1300(isPolivane: $isPolivane))
+        case 14:
+            return    AnyView(ArdaView1400(isPolivane: $isPolivane))
+        case 15:
+            return    AnyView(ArdaView1500(isPolivane: $isPolivane))
+        case 16:
+            return    AnyView(ArdaView1600(isPolivane: $isPolivane))
 
         default:
-            return    AnyView(Text("🐭"))
+            return    AnyView(ArdaView1600(isPolivane: $isPolivane))
         }
         
        

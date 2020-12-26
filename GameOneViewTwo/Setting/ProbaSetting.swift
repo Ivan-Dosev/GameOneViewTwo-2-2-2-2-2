@@ -22,12 +22,24 @@ struct BranchNew    : Identifiable, Hashable {
 class SetBranchNew : ObservableObject {
     
     var choseBranchNew : [ BranchNew] = [
-        BranchNew(id: 0, isLock: true,  isOnOff: true,   image: "apple_red",    text: "apple  ",   totall: 0.0, timeDate: Date(), reklama: true),
-        BranchNew(id: 1, isLock: true,  isOnOff: false,  image: "apple_red",    text: "apple  ",   totall: 0.0, timeDate: Date(), reklama: true),
-        BranchNew(id: 2, isLock: true,  isOnOff: false,  image: "apple_red",    text: "apple  ",   totall: 0.0, timeDate: Date(), reklama: true),
-        BranchNew(id: 3, isLock: false, isOnOff: false,  image: "sliva_sinj",   text: "sliva  ",   totall: 0.0, timeDate: Date(), reklama: true),
-        BranchNew(id: 4, isLock: false, isOnOff: false,  image: "krusha_galta", text: "krusha  ",  totall: 0.0, timeDate: Date(), reklama: true),
-        BranchNew(id: 5, isLock: false, isOnOff: false,  image: "cheresha",     text: "cheresha  ",totall: 0.0, timeDate: Date(), reklama: true)
+        BranchNew(id: 0, isLock: true,  isOnOff: true,   image: "tree0",    text: "tree0    ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 1, isLock: true,  isOnOff: false,  image: "tree1",    text: "tree2    ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 2, isLock: true,  isOnOff: false,  image: "tree2",    text: "tree3    ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 3, isLock: true, isOnOff: false,  image: "tree3",     text: "tree4    ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 4, isLock: true, isOnOff: false,  image: "tree4",     text: "tree5    ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 5, isLock: true, isOnOff: false,  image: "tree5",     text: "tree6    ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 7, isLock: true, isOnOff: false,  image: "tree6",     text: "tree7    ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 7, isLock: true, isOnOff: false,  image: "tree7",     text: "tree8    ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 8, isLock: true, isOnOff: false,  image: "tree8",     text: "tree9    ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 9, isLock: true, isOnOff: false,  image: "tree9",     text: "tree10   ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 10, isLock: true, isOnOff: false,  image: "tree10",     text: "tree11   ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 11, isLock: true, isOnOff: false,  image: "tree11",     text: "tree12   ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 12, isLock: true, isOnOff: false,  image: "tree12",     text: "tree13   ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 13, isLock: true, isOnOff: false,  image: "tree13",     text: "tree14   ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 14, isLock: true, isOnOff: false,  image: "tree14",     text: "tree15   ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 15, isLock: false, isOnOff: false,  image: "tree15",     text: "tree16   ",totall: 0.0, timeDate: Date(), reklama: true),
+        BranchNew(id: 16, isLock: false, isOnOff: false,  image: "tree16",     text: "tree17   ",totall: 0.0, timeDate: Date(), reklama: true)
+        
     ]
 }
 struct PrimaryButton: ViewModifier {
