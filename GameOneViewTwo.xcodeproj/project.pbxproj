@@ -24,6 +24,8 @@
 		CC229CD12596F36C00CA5BD7 /* ArtboardBk3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC229CCF2596F36C00CA5BD7 /* ArtboardBk3View.swift */; };
 		CC229CD22596F36C00CA5BD7 /* Timeline_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC229CD02596F36C00CA5BD7 /* Timeline_1.swift */; };
 		CC229CD725971D0300CA5BD7 /* DeadNewVerstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC229CD625971D0300CA5BD7 /* DeadNewVerstion.swift */; };
+		CC229CDE259725FC00CA5BD7 /* ArdaScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC229CDC259725FC00CA5BD7 /* ArdaScene.swift */; };
+		CC229CDF259725FC00CA5BD7 /* Arda.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC229CDD259725FC00CA5BD7 /* Arda.swift */; };
 		CC40676A253BF4E200C57373 /* ProbaSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC406769253BF4E200C57373 /* ProbaSetting.swift */; };
 		CC44E4E8253D36CF00A2A03A /* DataSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC44E4E7253D36CF00A2A03A /* DataSetting.swift */; };
 		CC45821B254B410C0003989F /* FlowContentViewNumber1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC45821A254B410C0003989F /* FlowContentViewNumber1.swift */; };
@@ -120,6 +122,8 @@
 		CC229CCF2596F36C00CA5BD7 /* ArtboardBk3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtboardBk3View.swift; path = "../../../../../../../Image Nature/1700/Ok3/ArtboardBk3View.swift"; sourceTree = "<group>"; };
 		CC229CD02596F36C00CA5BD7 /* Timeline_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline_1.swift; path = "../../../../../../../Image Nature/1700/Ok3/Timeline_1.swift"; sourceTree = "<group>"; };
 		CC229CD625971D0300CA5BD7 /* DeadNewVerstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadNewVerstion.swift; sourceTree = "<group>"; };
+		CC229CDC259725FC00CA5BD7 /* ArdaScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArdaScene.swift; sourceTree = "<group>"; };
+		CC229CDD259725FC00CA5BD7 /* Arda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arda.swift; sourceTree = "<group>"; };
 		CC406769253BF4E200C57373 /* ProbaSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbaSetting.swift; sourceTree = "<group>"; };
 		CC44E4E7253D36CF00A2A03A /* DataSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSetting.swift; sourceTree = "<group>"; };
 		CC45821A254B410C0003989F /* FlowContentViewNumber1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowContentViewNumber1.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 		CC229C3A25959D6900CA5BD7 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				CC229CDB2597257900CA5BD7 /* Enemy */,
 				CC229C522595B97100CA5BD7 /* Oblack */,
 				CC229C4425959DAB00CA5BD7 /* ArdaView.swift */,
 				CC229C4825959DAB00CA5BD7 /* ColorTube-Regular.ttf */,
@@ -276,6 +281,15 @@
 				CC229C662595BB3100CA5BD7 /* OblackView.swift */,
 			);
 			path = Oblack;
+			sourceTree = "<group>";
+		};
+		CC229CDB2597257900CA5BD7 /* Enemy */ = {
+			isa = PBXGroup;
+			children = (
+				CC229CDD259725FC00CA5BD7 /* Arda.swift */,
+				CC229CDC259725FC00CA5BD7 /* ArdaScene.swift */,
+			);
+			path = Enemy;
 			sourceTree = "<group>";
 		};
 		CC40674C253B2BF600C57373 /* Setting */ = {
@@ -634,6 +648,7 @@
 				CC229C4B25959DAB00CA5BD7 /* Tree18View.swift in Sources */,
 				CC45822E254B478D0003989F /* Animation.swift in Sources */,
 				CCCF774A252583B6007430E3 /* ButtonView.swift in Sources */,
+				CC229CDE259725FC00CA5BD7 /* ArdaScene.swift in Sources */,
 				CC9BCD3E2523A4F5007FC885 /* Alo+CoreDataProperties.swift in Sources */,
 				CC229CD12596F36C00CA5BD7 /* ArtboardBk3View.swift in Sources */,
 				CC458260254B480B0003989F /* Timeline.swift in Sources */,
@@ -663,6 +678,7 @@
 				CCAFF08925499227003B0114 /* FlowContentViewNumber2.swift in Sources */,
 				CC9BCD582523A79D007FC885 /* ProgressBar.swift in Sources */,
 				CC4583E2254EA8FD0003989F /* Timeline_Kalvach.swift in Sources */,
+				CC229CDF259725FC00CA5BD7 /* Arda.swift in Sources */,
 				CC45848F2552AD350003989F /* GameLock+CoreDataClass.swift in Sources */,
 				CC45824C254B47D80003989F /* NSShadow+Extension.swift in Sources */,
 				CC9BCD0B2523A336007FC885 /* ContentView.swift in Sources */,

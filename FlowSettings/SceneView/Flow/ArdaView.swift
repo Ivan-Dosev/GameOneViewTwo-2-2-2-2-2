@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct ArdaView: View {
     
@@ -29,14 +30,23 @@ struct ArdaView: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -44,26 +54,19 @@ struct ArdaView: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
         .modifier(PrimaryButton())  .modifier(PrimaryButton())
     }
 }
-
-struct ArdaView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArdaView(isPolivane: .constant(true))
-    }
-}
-
 
 struct ArdaView100: View {
     
@@ -87,14 +90,23 @@ struct ArdaView100: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -102,13 +114,13 @@ struct ArdaView100: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
@@ -137,14 +149,23 @@ struct ArdaView200: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -152,20 +173,19 @@ struct ArdaView200: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
         .modifier(PrimaryButton())  .modifier(PrimaryButton())
     }
 }
-
 struct ArdaView300: View {
     
     @Binding var isPolivane : Bool
@@ -188,14 +208,23 @@ struct ArdaView300: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -203,13 +232,13 @@ struct ArdaView300: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
@@ -238,14 +267,23 @@ struct ArdaView400: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -253,13 +291,13 @@ struct ArdaView400: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
@@ -288,14 +326,23 @@ struct ArdaView500: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -303,20 +350,19 @@ struct ArdaView500: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
         .modifier(PrimaryButton())  .modifier(PrimaryButton())
     }
 }
-
 struct ArdaView600: View {
     
     @Binding var isPolivane : Bool
@@ -339,14 +385,23 @@ struct ArdaView600: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -354,13 +409,13 @@ struct ArdaView600: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
@@ -389,14 +444,23 @@ struct ArdaView700: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -404,20 +468,19 @@ struct ArdaView700: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
         .modifier(PrimaryButton())  .modifier(PrimaryButton())
     }
 }
-
 struct ArdaView800: View {
     
     @Binding var isPolivane : Bool
@@ -440,14 +503,23 @@ struct ArdaView800: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -455,21 +527,19 @@ struct ArdaView800: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
         .modifier(PrimaryButton())  .modifier(PrimaryButton())
     }
 }
-
-
 struct ArdaView900: View {
     
     @Binding var isPolivane : Bool
@@ -492,14 +562,23 @@ struct ArdaView900: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -507,20 +586,19 @@ struct ArdaView900: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
         .modifier(PrimaryButton())  .modifier(PrimaryButton())
     }
 }
-
 struct ArdaView1000: View {
     
     @Binding var isPolivane : Bool
@@ -543,14 +621,23 @@ struct ArdaView1000: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -558,20 +645,19 @@ struct ArdaView1000: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
         .modifier(PrimaryButton())  .modifier(PrimaryButton())
     }
 }
-
 struct ArdaView1100: View {
     
     @Binding var isPolivane : Bool
@@ -594,14 +680,23 @@ struct ArdaView1100: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -609,13 +704,13 @@ struct ArdaView1100: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
@@ -644,14 +739,23 @@ struct ArdaView1200: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -659,13 +763,13 @@ struct ArdaView1200: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
@@ -694,14 +798,23 @@ struct ArdaView1300: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -709,13 +822,13 @@ struct ArdaView1300: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
@@ -744,14 +857,23 @@ struct ArdaView1400: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -759,13 +881,13 @@ struct ArdaView1400: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
@@ -794,14 +916,23 @@ struct ArdaView1500: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -809,13 +940,13 @@ struct ArdaView1500: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
@@ -844,14 +975,23 @@ struct ArdaView1600: View {
             return 1000
         }
     }
-  
+    var EnemyScene : SKScene {
+
+        let scene = MagicScene()
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
+        return scene
+    }
     var body: some View {
         ZStack {
-            Image("Treva")
-                .resizable()
+            SpriteView(scene: EnemyScene)
+              .background(Color.clear)
+              .disabled(false)
                              ViewTree()
+                                .disabled(true)
             if isPolivane {
                              Oblack()
+                                .disabled(true)
                                 .onAppear(){
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                         self.isShow.toggle()
@@ -859,16 +999,17 @@ struct ArdaView1600: View {
                                 }
                 if isShow {
                     ViewOblackBal()
+                        .disabled(true)
                         .onAppear(){
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.isShow.toggle()
                             }
                         }
                 }
-                          
             }
         }
         .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
         .modifier(PrimaryButton())  .modifier(PrimaryButton())
     }
 }
+

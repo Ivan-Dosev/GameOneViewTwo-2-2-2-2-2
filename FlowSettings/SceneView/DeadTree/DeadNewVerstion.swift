@@ -48,7 +48,7 @@ struct DeadNewViewTree: View {
        ZStack {
            dead
            Text("tree is dead")
-            .font(.custom("ColorTube-Regular", size: 26))
+            .font(.custom("ColorTube-Regular", size: 32))
        }
        .frame(width: width / 1.1, height: width / 1.1 , alignment: .center)
        .modifier(PrimaryButton())  .modifier(PrimaryButton())

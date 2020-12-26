@@ -46,7 +46,7 @@ struct FirstNewView: View {
     
     @State var isPolivane  : Bool = false
     @State var isTorene    : Bool = false
-    @State var isTretirane : Bool = false
+    @State var isTretirane : Bool = true
     @EnvironmentObject var timeOnOff : TimeOnOff
     var toto : Float  {
         if gameLock.count != 0 {
