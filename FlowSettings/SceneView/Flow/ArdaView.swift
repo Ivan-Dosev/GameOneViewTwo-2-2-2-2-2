@@ -8,6 +8,16 @@
 import SwiftUI
 import SpriteKit
 
+class SceneOneTree: SKScene {
+
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        let  background = SKSpriteNode(imageNamed: "Treva")
+             background.position = CGPoint(x: 150, y: 150)
+             addChild(background)
+    }
+}
+
 struct ArdaView: View {
     
     @Binding var isPolivane : Bool
@@ -39,9 +49,10 @@ struct ArdaView: View {
     }
     var body: some View {
         ZStack {
-            SpriteView(scene: EnemyScene)
-              .background(Color.clear)
-              .disabled(false)
+                        SpriteView(scene: EnemyScene)
+                          .background(Color.clear)
+                          .disabled(false)
+
                              ViewTree()
                                 .disabled(true)
             if isPolivane {
@@ -67,6 +78,7 @@ struct ArdaView: View {
         .modifier(PrimaryButton())  .modifier(PrimaryButton())
     }
 }
+
 
 struct ArdaView100: View {
     
@@ -99,9 +111,10 @@ struct ArdaView100: View {
     }
     var body: some View {
         ZStack {
-            SpriteView(scene: EnemyScene)
-              .background(Color.clear)
-              .disabled(false)
+                        SpriteView(scene: EnemyScene)
+                          .background(Color.clear)
+                          .disabled(false)
+
                              ViewTree()
                                 .disabled(true)
             if isPolivane {
@@ -127,6 +140,7 @@ struct ArdaView100: View {
         .modifier(PrimaryButton())  .modifier(PrimaryButton())
     }
 }
+
 struct ArdaView200: View {
     
     @Binding var isPolivane : Bool

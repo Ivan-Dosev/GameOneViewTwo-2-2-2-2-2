@@ -39,7 +39,7 @@ struct FirstNewView: View {
 //   init(){ self.rewardAd = Rewarded() }
     
     @State var isPressed : Bool = false
-    
+   
     @State var isTimer     : Bool = false
     @State var isCoreData  : Bool = false
     @State var isSetting   : Bool = false
@@ -74,12 +74,14 @@ struct FirstNewView: View {
                             .offset(y: self.width < 700 ? 40 : 40)
                     }else {
                         Button(action: {
+                            UserDefaults.standard.set(true, forKey: "ShowEnemy")
                             self.isPolivane = true
                                                         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                                                             self.isPolivane = false
                                                         }
                         }) {
                             Text("Polivane")
+                                .scaleEffect(UserDefaults.standard.bool(forKey: "Polivane") ? 1.2 : 1)
                                 .frame(width: width / 4  , height: width / 6)
                                 .modifier(PrimaryButton())
                                 .offset(y: self.width < 700 ? 40 : 40)
@@ -140,36 +142,36 @@ struct FirstNewView: View {
 
                 
             } .frame(width: self.width  , height: self.height )
+            
+            
             ZStack {
-             
-                if self.isTretirane {
-//                    TreeDeadView()
-                      DeadNewViewTree()
-                }else{
-                    loadNewView()
-                }
-              
-         
- 
 
+                if UserDefaults.standard.bool(forKey: "TreeDead") {
+                        DeadNewViewTree()
+                          
+                }else{
+                        loadNewView()
+                          
+                }
             }
+            
+            
         }
         .onAppear(){
             
                 isTretirane.toggle()
-       
-          
+
             if gameLock.count == 0 {
 
                 print("\(gameLock.count)...ok")
                 loadData()
+                    UserDefaults.standard.set(false, forKey: "TreeDead")
+                    UserDefaults.standard.set(false, forKey: "ShowEnemy")
             }else{
                 print("core data loaded \(gameLock[loadIndexFromCoreData()].totallG)")
-              
             }
 
         }
-       
     }
     
     func loadIndexFromCoreData() -> Int {
@@ -252,7 +254,7 @@ struct FirstNewView: View {
             loaddata.imageG     =  chose.choseBranchNew[num].image
             loaddata.totallG    =  Float(chose.choseBranchNew[num].totall)
             loaddata.reklamaG   =  chose.choseBranchNew[num].reklama
-            loaddata.timeDateG  =  chose.choseBranchNew[num].timeDate
+            loaddata.timeDateG  =  Date()
             
             
             do {

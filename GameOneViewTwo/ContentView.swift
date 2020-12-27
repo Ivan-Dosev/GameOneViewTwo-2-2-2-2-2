@@ -11,6 +11,9 @@ import UserNotifications
 
 struct ContentView: View {
     
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: GameLock.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \GameLock.idG, ascending: true)]) var gameLock: FetchedResults<GameLock>
+    
     @EnvironmentObject var timeOnOff : TimeOnOff
     @State var ppValue : Int = 0
     @State var ttValue : Int = 0
@@ -69,7 +72,8 @@ struct ContentView: View {
             .onAppear() {
                 // Иска разрешение да изпраща нотификации като зареди ContentView
                 notificationPermission()
-            
+                readDate()
+                saveDate()
                 //
             }
 //        ProbaView()
@@ -110,6 +114,63 @@ struct ContentView: View {
 
         // add our notification request
         UNUserNotificationCenter.current().add(request)
+    }
+    func saveDate() {
+
+            gameLock[UserDefaults.standard.integer(forKey: "Arda")].timeDateG = Date()
+            do {
+                try  self.moc.save()
+                     print(" ok totall")
+            }catch{
+                     print(" no totall")
+            }
+    }
+    
+    func readDate(){
+        var to = 0
+        var ho = 0
+     
+
+        guard       let hoDay = gameLock[UserDefaults.standard.integer(forKey: "Arda")].timeDateG else {
+            print("return............rerurn")
+            return}
+                    let hoComponents = Calendar.current.dateComponents([.day, .hour, .minute ], from: hoDay)
+                    let hoday    = hoComponents.day
+                    let hohour   = hoComponents.hour
+                    let hominute = hoComponents.minute
+                    
+                    let toDay = Date()
+                    let toComponent = Calendar.current.dateComponents([.day, .hour, .minute], from: toDay)
+                    let today     = toComponent.day
+                    let tohour    = toComponent.hour
+                    let tominute  = toComponent.minute
+
+                    to = (Int(tohour!) * 60 ) + Int(tominute!) + (Int(today!) * 1440)
+                    ho = (Int(hohour!) * 60 ) + Int(hominute!) + (Int(hoday!) * 1440)
+                    print("\(Int(to - ho ))....>>>>")
+                    print("\(hoDay)....>>>>")
+                    print("\(toDay)....>>>>")
+        
+        if Int(to - ho ) > 3 {
+                             UserDefaults.standard.set(true, forKey: "TreeDead")
+        }else{
+                             UserDefaults.standard.set(false, forKey: "TreeDead")
+        }
+        
+        if Int(to - ho ) > 2 {
+                             UserDefaults.standard.set(true, forKey: "Polivane")
+        }else{
+                             UserDefaults.standard.set(false, forKey: "Polivane")
+        }
+        
+        
+        if Int(to - ho ) > 1 {
+                             UserDefaults.standard.set(true, forKey: "ShowEnemy")
+        }else{
+                             UserDefaults.standard.set(false, forKey: "ShowEnemy")
+        }
+
+
     }
 }
 
